@@ -1,9 +1,14 @@
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 using PizzaStore.Endpoints;
+using PizzaStore.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddDbContext<Db>(options => options.UseInMemoryDatabase("items"));
+
 builder.Services.AddSwaggerGen(c =>
 {
   c.SwaggerDoc("v1", new OpenApiInfo
@@ -33,7 +38,7 @@ app.UseCors(builder =>
         .AllowAnyHeader();
 });
 
-app.MapPizzaEndpoints();
-app.MapPastaEndpoints();
+app.MapPizzaEndpoints(app);
+app.MapPastaEndpoints(app);
 
 app.Run();

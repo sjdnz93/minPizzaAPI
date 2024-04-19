@@ -1,7 +1,13 @@
-﻿namespace PizzaStore.Models;
-public record Pizza
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace PizzaStore.Models
 {
-  public int Id { get; set; }
-  public string? Name { get; set; }
-  public string? Description { get; set; }
+  public class Pizza
+  {
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public string? Description { get; set; }
+  }
+
 }
+
