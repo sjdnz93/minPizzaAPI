@@ -5,9 +5,11 @@ using PizzaStore.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("PizzaStoreDb") ?? "Data Source=PizzaStore.Data.Db.db";
+
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddDbContext<Db>(options => options.UseInMemoryDatabase("items"));
+builder.Services.AddSqlite<Db>(connectionString);
 
 builder.Services.AddSwaggerGen(c =>
 {

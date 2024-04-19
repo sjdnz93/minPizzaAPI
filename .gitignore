@@ -20,3 +20,10 @@ obj/
 # Package Manager Directories
 node_modules/
 packages/
+
+# DB migrations
+/Migrations
+
+# DB files
+*.db
+
