@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { PastaService } from '../api-controllers/pasta-controllers/api.pasta-service';
 import { Pasta } from '../types';
 
 @Component({
@@ -10,7 +10,7 @@ import { Pasta } from '../types';
 export class PastaMenuComponent implements OnInit {
   pastas: Pasta[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: PastaService) { }
 
   ngOnInit() {
     this.getPasta();

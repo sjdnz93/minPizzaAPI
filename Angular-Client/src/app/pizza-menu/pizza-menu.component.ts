@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { PizzaService } from '../api-controllers/pizza-controllers/api.pizza-service';
 import { Pizza } from '../types';
 
 @Component({
@@ -10,7 +10,7 @@ import { Pizza } from '../types';
 export class PizzaMenuComponent implements OnInit {
   pizzas: Pizza[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: PizzaService) { }
 
   ngOnInit() {
     this.getPizzas();
