@@ -1,1 +1,10 @@
-<p>pasta-menu works!</p>
+<h2>Here is the Pasta:</h2>
+
+<div *ngFor="let pasta of pastas">
+  <h3>
+      pastas number {{ pasta.id }}: {{ pasta.name }}
+  </h3>
+
+  <p *ngIf="pasta.description">Description: {{ pasta.description }}</p>
+
+</div>

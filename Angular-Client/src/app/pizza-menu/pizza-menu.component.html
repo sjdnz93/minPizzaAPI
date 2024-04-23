@@ -1,1 +1,10 @@
-<p>pizza-menu works!</p>
+<h2>Here are the Pizzas:</h2>
+
+<div *ngFor="let pizza of pizzas">
+  <h3>
+      Pizza number {{ pizza.id }}: {{ pizza.name }}
+  </h3>
+
+  <p *ngIf="pizza.description">Description: {{ pizza.description }}</p>
+
+</div>

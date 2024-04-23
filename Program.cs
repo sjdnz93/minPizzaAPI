@@ -35,7 +35,7 @@ app.UseRouting();
 
 app.UseCors(builder =>
 {
-  builder.WithOrigins("http://localhost:5173") // Adjust this to your React app's URL
+  builder.WithOrigins("http://localhost:5173", "http://localhost:4200") // Adjust this to your Client app's URL -> here we have React and Angular
         .AllowAnyMethod()
         .AllowAnyHeader();
 });
