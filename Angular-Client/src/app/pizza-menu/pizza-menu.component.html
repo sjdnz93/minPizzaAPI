@@ -1,10 +1,16 @@
 <h2>Here are the Pizzas:</h2>
 
 <div *ngFor="let pizza of pizzas">
-  <h3>
-      Pizza number {{ pizza.id }}: {{ pizza.name }}
-  </h3>
+
+  <h3>Pizza number {{ pizza.id }}: {{ pizza.name }}</h3>
 
   <p *ngIf="pizza.description">Description: {{ pizza.description }}</p>
 
 </div>
+
+<div>
+  <h4>Use the form below to add a new pizza to the menu:</h4>
+  <app-item-form></app-item-form>
+</div>
+
+
